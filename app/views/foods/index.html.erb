@@ -22,7 +22,7 @@
             <td><%= food.measurement_unit %></td>
             <td><%= food.price %></td>
             <td>
-              <%= link_to "Delete", food_path(food), method: :delete, data: { confirm: "Are you sure?" }, class: "action-btn" %>
+              <%= link_to "Delete", food_path(food), data: { turbo_method: :delete }, class: "action-btn" %>
             </td>
           </tr>
         <% end %>
