@@ -93,3 +93,10 @@ th {
   width: 25%;
   margin: 0 auto;
 }
+
+.users-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem auto;
+}

@@ -8,7 +8,7 @@ class User < ApplicationRecord
     # Get all recipe foods for current user's recipes
     recipe_foods = RecipeFood.where(recipes: { user_id: id })
 
-    #Group recipe foods by their associated food items and calculate the total quantity required for each food item
+    # Group recipe foods by their associated food items and calculate the total quantity required for each food item
     recipe_foods.group(:food_id).sum(:quantity)
 
     # Hash to store shopping list items
@@ -28,13 +28,13 @@ class User < ApplicationRecord
 
       # Calculate the total price for the required quantity
       total_price = quantity_required * food.price
-      shopping_list[food] = { quantity: quantity_required, total_price: total_price }
+      shopping_list[food] = { quantity: quantity_required, total_price: }
 
       # Increment total items and total value
       total_items += quantity_required
       total_value += total_price
     end
 
-    { shopping_list:, total_items: , total_value: }
+    { shopping_list:, total_items:, total_value: }
   end
 end

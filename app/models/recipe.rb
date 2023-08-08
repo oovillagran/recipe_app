@@ -11,7 +11,7 @@ class Recipe < ApplicationRecord
 
   def total_price
     # Total price for the recipe
-    recipe_foods.sum{ |rf| rf.food.price * rf.quantity}
+    recipe_foods.sum { |rf| rf.food.price * rf.quantity }
   end
 
   def public?
