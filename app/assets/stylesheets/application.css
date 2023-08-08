@@ -67,7 +67,8 @@ body {
   width: 80%;
 }
 
-th, td {
+th,
+td {
   padding: 0.5rem;
   text-align: center;
   outline: #000 0.125rem solid;
