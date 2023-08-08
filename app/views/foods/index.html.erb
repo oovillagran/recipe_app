@@ -1,3 +1,30 @@
-<h1>Here is the List of Foods for a given user</h1>
-<p>Create an Add Food Button</p>
-<p>Create a table show Food name, measurement unit, Unit price, Actions</p>
+<div class="food-page">
+  <%= button_to "Add Food", new_food_path(user_id: @user.id), method: :get, class: "btn" %>
+
+  <% if @user.foods.empty? %>
+    <p>No food available for this user.</p>
+  <% else %>
+    <table class="food-table">
+      <thead>
+        <tr>
+          <th>Food</th>
+          <th>Measurement Unit</th>
+          <th>Unit Price</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @user.foods.each do |food| %>
+          <tr>
+            <td><%= food.name %></td>
+            <td><%= food.measurement_unit %></td>
+            <td><%= food.price %></td>
+            <td>
+              <%= button_to "Delete", food_path(food), method: :delete, data: { confirm: "Are you sure?" }, class: "action-btn" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>

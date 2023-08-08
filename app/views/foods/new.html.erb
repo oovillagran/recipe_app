@@ -1,1 +1,21 @@
-<h1>Add a new food form</h1>
+<div>
+  <h1>Add a new food</h1>
+  <div class="add-food-form">
+    <%= form_with(model: @food, url: foods_path(@user)) do |form| %>
+      <%= form.label :name %>
+      <%= form.text_field :name, required: true %>
+
+      <%= form.label :measurement_unit %>
+      <%= form.select :measurement_unit, options_for_select(['mg', 'gr', 'Kg']), {}, { placeholder: 'Choose a measurement unit'} %>
+
+      <%= form.label :price %>
+      <%= form.number_field :price, required: true %>
+
+      <%= form.label :quantity %>
+      <%= form.number_field :quantity, required: true %>
+
+      <%= form.submit "Add Food", class: "btn" %>
+    <% end %>
+  </div>
+</div>
+
