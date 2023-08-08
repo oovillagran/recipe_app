@@ -15,7 +15,7 @@ class FoodsController < ApplicationController
     @food.user_id = current_user.id
     if @food.save
       flash[:success] = 'Food was successfully created'
-      redirect_to food_path(@food)
+      redirect_to foods_path
     else
       render 'new'
     end

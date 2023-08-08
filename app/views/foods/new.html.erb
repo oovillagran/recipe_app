@@ -1,20 +1,30 @@
-<div>
+<div class="new-food">
   <h1>Add a new food</h1>
-  <div class="add-food-form">
-    <%= form_with(model: @food, url: foods_path(@user)) do |form| %>
-      <%= form.label :name %>
-      <%= form.text_field :name, required: true %>
+  <div class="add-food-section">
+    <%= form_with(model: @food, url: foods_path(@user), class: 'add-food-form') do |form| %>
+      <div class="food-field">
+        <%= form.label :name %>
+        <%= form.text_field :name, required: true %>
+      </div>
 
-      <%= form.label :measurement_unit %>
-      <%= form.select :measurement_unit, options_for_select(['mg', 'gr', 'Kg']), {}, { placeholder: 'Choose a measurement unit'} %>
+      <div class="food-field">
+        <%= form.label :measurement_unit %>
+        <%= form.select :measurement_unit, options_for_select(['mg', 'gr', 'Kg', 'oz', 'lt']), { include_blank: 'Choose a measurement unit'}, class: 'form-control' %>
+      </div>
 
-      <%= form.label :price %>
-      <%= form.number_field :price, required: true %>
+      <div class="food-field">
+        <%= form.label :price %>
+        <%= form.number_field :price, required: true, step: '0.01' %>
+      </div>
 
-      <%= form.label :quantity %>
-      <%= form.number_field :quantity, required: true %>
+      <div class="food-field">
+        <%= form.label :quantity %>
+        <%= form.number_field :quantity, required: true, step: '0.01' %>
+      </div>
 
-      <%= form.submit "Add Food", class: "btn" %>
+      <div class="food-field">
+        <%= form.submit "Add Food", class: "btn" %>
+      </div>
     <% end %>
   </div>
 </div>

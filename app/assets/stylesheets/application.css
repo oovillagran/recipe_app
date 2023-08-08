@@ -13,3 +13,83 @@
  *= require_tree .
  *= require_self
  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #fff;
+}
+
+.new-food {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-food-form {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  gap: 2rem;
+}
+
+.food-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-food-section {
+  width: 50%;
+}
+
+.food-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-food-btn {
+  display: flex;
+  justify-content: flex-end;
+  width: 80%;
+  margin: 2rem 0;
+}
+
+.food-table {
+  outline: #000 0.125rem solid;
+  width: 80%;
+}
+
+th, td {
+  padding: 0.5rem;
+  text-align: center;
+  outline: #000 0.125rem solid;
+  width: 25%;
+}
+
+th {
+  background-color: #857f7f;
+  color: #fff;
+}
+
+.food-table tr:nth-child(even) {
+  background-color: #e7d9d9;
+}
+
+.btn {
+  background-color: #fff;
+  padding: 0.5rem;
+  box-shadow: #000 0.125rem 0.125rem;
+}
+
+.food-field .btn {
+  width: 25%;
+  margin: 0 auto;
+}
