@@ -8,8 +8,8 @@
 
 # Create sample users
 
-user1 = User.create(name: "John Doe")
-user2 = User.create(name: "Jane Doe")
+user1 = User.create(name: "John Doe", email: "john@doe.com", password: "123456")
+user2 = User.create(name: "Jane Doe", email: "jane@doe.com", password: "123456")
 
 # Create sample foods
 

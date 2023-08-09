@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  root 'recipes#public_recipes'
+  root 'recipes#index'
 
   get 'public_recipes', to: 'recipes#public_recipes', as: 'public_recipes'
 
