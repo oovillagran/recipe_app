@@ -14,8 +14,9 @@
     <% if user_signed_in? %>
       <header>
         <nav>
-          <ul>
+          <ul class="navbar">
             <li><%= link_to "Home", root_path %></li>
+            <li><%= link_to "Foods", foods_path %></li>
             <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
           </ul>
         </nav>
@@ -23,8 +24,9 @@
       <% else %>
         <header>
           <nav>
-            <ul>
+            <ul class="navbar">
               <li><%= link_to "Home", root_path %></li>
+              <li><%= link_to "Foods", foods_path %></li>
               <li><%= link_to "Sign Up", new_user_registration_path %></li>
               <li><%= link_to "Sign In", new_user_session_path %></li>
             </ul>

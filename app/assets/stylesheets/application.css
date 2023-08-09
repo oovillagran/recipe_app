@@ -101,3 +101,12 @@ th {
   align-items: center;
   margin: 2rem auto;
 }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #857f7f;
+  color: #fff;
+}
