@@ -1,0 +1,32 @@
+<div class="food-page">
+  <div class="add-food-btn">
+    <%= button_to "Add Food", new_food_path(user_id: @user.id), method: :get, class: "btn" %>
+  </div>
+
+  <% if @user.foods.empty? %>
+    <p>No food available for this user.</p>
+  <% else %>
+    <table class="food-table">
+      <thead>
+        <tr>
+          <th>Food</th>
+          <th>Measurement Unit</th>
+          <th>Unit Price</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @user.foods.each do |food| %>
+          <tr>
+            <td><%= food.name %></td>
+            <td><%= food.measurement_unit %></td>
+            <td><%= food.price %></td>
+            <td>
+              <%= link_to "Delete", food_path(food), data: { turbo_method: :delete }, class: "action-btn" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>
