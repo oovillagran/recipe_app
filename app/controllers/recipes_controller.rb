@@ -18,8 +18,10 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     @recipe.user_id = current_user.id
     if @recipe.save
-      redirect_to user_recipes_path
+      flash[:notice] = 'Recipe was added to the table successfully .'
+      redirect_to recipes_path
     else
+      flash[:alert] = 'Recipe was not added to the table.'
       render 'new'
     end
   end
@@ -28,6 +30,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @recipe.recipe_foods.destroy_all
     @recipe.destroy
+    flash[:notice] = 'Recipe was successfully deleted.'
     redirect_to user_recipes_path
   end
 

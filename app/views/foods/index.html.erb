@@ -1,9 +1,9 @@
 <div class="food-page">
   <div class="add-food-btn">
-    <%= button_to "Add Food", new_food_path(user_id: @user.id), method: :get, class: "btn" %>
+    <%= button_to "Add Food", new_food_path, method: :get, class: "btn" %>
   </div>
 
-  <% if @user.foods.empty? %>
+  <% if @foods.empty? %>
     <p>No food available for this user.</p>
   <% else %>
     <table class="food-table">
@@ -16,7 +16,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @user.foods.each do |food| %>
+        <% @foods.each do |food| %>
           <tr>
             <td><%= food.name %></td>
             <td><%= food.measurement_unit %></td>

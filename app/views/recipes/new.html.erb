@@ -1,1 +1,24 @@
-<h1>This is the form of new recipes</h1>
+<h1>New Recipe</h1>
+<%= form_with model: @recipe, local: true do |f| %>
+  <div>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div>
+    <%= f.label :preparation_time %><br>
+    <%= f.text_field :preparation_time %>
+  </div>
+  <div>
+    <%= f.label :cooking_time %><br>
+    <%= f.text_field :cooking_time %>
+  </div>
+  <div>
+    <%= f.label :public %><br>
+    <%= f.select :public, options_for_select(['true', 'false']) %>
+  </div>
+  <%= f.submit "Add" %>
+<% end %>

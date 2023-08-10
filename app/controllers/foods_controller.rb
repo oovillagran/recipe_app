@@ -1,9 +1,6 @@
 class FoodsController < ApplicationController
   def index
-    @user = current_user
-    @foods = @user.foods
-    @recipe_foods = RecipeFood.joins(recipe: :user).where(users: { id: @user.id })
-    p @recipe_foods
+    @foods = Food.all
   end
 
   def new
@@ -17,6 +14,7 @@ class FoodsController < ApplicationController
       flash[:success] = 'Food was successfully created'
       redirect_to foods_path
     else
+      flash[:alert] = 'Food was not created'
       render 'new'
     end
   end

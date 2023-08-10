@@ -1,1 +1,12 @@
-<h1>This is the recipes list</h1>
+<h1>Recipe List</h1>
+<%= link_to "Add Recipe", new_recipe_path, class: "recipe-btn" %>
+<% @recipes.each do |recipe| %>
+  <div class="recipe-card">
+    <div class="left-recipe-col">
+      <h2><%= link_to recipe.name, recipe_path(recipe) %></h2>
+    </div>
+    <div class="right-recipe-col">
+      <p><%= recipe.description %></p>
+    </div>
+  </div>
+<% end %>
