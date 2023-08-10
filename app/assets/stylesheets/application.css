@@ -155,3 +155,8 @@ th {
   flex-direction: column;
   margin: 2rem 10% 0;
 }
+
+.registration-add a {
+  text-decoration-line: underline;
+  color: rgb(0, 0, 255);
+}
