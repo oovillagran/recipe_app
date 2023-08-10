@@ -155,3 +155,17 @@ th {
   text-decoration-line: underline;
   color: rgb(0, 0, 255);
 }
+
+.recipe-btn {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2rem 0;
+}
+
+.flash-success {
+  color: green;
+}
+
+.flash-alert {
+  color: red;
+}
