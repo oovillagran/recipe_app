@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :users do
     resources :recipes, only: [:index, :show, :new, :create, :destroy] do
       resources :recipe_foods, only: [:show, :new, :create, :destroy]
-      get 'shopping_list', to: 'recipes#shopping_list', as: 'shopping_list' do
+      get 'shopping_list', to: 'users#shopping_list', as: 'shopping_list' do
     end
   end
 end
