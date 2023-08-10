@@ -4,8 +4,11 @@
     <div class="recipe-card">
       <div class="left-recipe-col">
         <h2><%= link_to recipe.name, recipe_path(recipe) %></h2>
+        <p>Created by: <%= recipe.user.name %></p>
       </div>
       <div class="right-recipe-col">
+        <p>Total Ingredients: <%= recipe.recipe_foods.map(&:food_id).uniq.count %></p>
+        <p>Total Value: $<%= number_with_precision(recipe.total_price, precision: 2) %></p>
         <p><%= recipe.description %></p>
       </div>
     </div>
