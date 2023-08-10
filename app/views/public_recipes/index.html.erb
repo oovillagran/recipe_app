@@ -1,1 +1,13 @@
-<h1>Show the public recipes list</h1>
+<div class="public_recipes_page">
+  <h1>Public Recipes</h1>
+  <% @public_recipes.each do |recipe| %>
+    <div class="recipe-card">
+      <div class="left-recipe-col">
+        <h2><%= link_to recipe.name, recipe_path(recipe) %></h2>
+      </div>
+      <div class="right-recipe-col">
+        <p><%= recipe.description %></p>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -15,12 +15,12 @@
 </div>
 <p>Cooking time: <%= @recipe.cooking_time %> hour(s)</p>
 
-<%= form_with model: @recipe, local: true do |f| %>
-  <div>
-    <%= f.label :public %><br>
-    <%= f.select :public, options_for_select(['true', 'false']) %>
-  </div>
-<% end %>
+<div class="toggle-button">
+  <% if current_user == @recipe.user %>
+    <%= button_to "Toggle Public", toggle_user_recipe_path(user_id: current_user.id, id: @recipe.id), method: :patch, class: "btn toggle-public-btn" %>
+    <h4>Public: <%= @recipe.public.to_s %></h4>
+  <% end %>
+</div>
 
 <div class="recipe-btn">
   <% if current_user == @recipe.user %>
