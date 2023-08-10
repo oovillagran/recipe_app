@@ -20,9 +20,15 @@
           <tr>
             <td><%= food.name %></td>
             <td><%= food.measurement_unit %></td>
-            <td><%= food.price %></td>
             <td>
-              <%= link_to "Delete", food_path(food), data: { turbo_method: :delete }, class: "action-btn" %>
+              <%= number_to_currency(food.price, unit: '$', precision: 2) %>
+            </td>
+            <td>
+              <% if RecipeFood.exists?(food_id: food.id) %>
+                <span>Is part of a recipe</span>
+              <% else %>
+                <%= link_to "Delete", food_path(food), data: { turbo_method: :delete }, class: "action-btn" %>
+              <% end %>
             </td>
           </tr>
         <% end %>

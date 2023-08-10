@@ -28,6 +28,10 @@ body {
   background-color: #fff;
 }
 
+hr {
+  margin: 0 0 2rem;
+}
+
 .new-food {
   display: flex;
   flex-direction: column;

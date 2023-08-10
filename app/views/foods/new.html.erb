@@ -9,12 +9,12 @@
 
       <div class="food-field">
         <%= form.label :measurement_unit %>
-        <%= form.select :measurement_unit, options_for_select(['mg', 'gr', 'Kg', 'oz', 'lt']), { include_blank: 'Choose a measurement unit'}, class: 'form-control' %>
+        <%= form.select :measurement_unit, options_for_select(['mg', 'gr', 'Kg', 'oz', 'lt', 'u']), { include_blank: 'Choose a measurement unit'}, class: 'form-control' %>
       </div>
 
       <div class="food-field">
         <%= form.label :price %>
-        <%= form.number_field :price, required: true, step: '0.01' %>
+        <%= form.number_field :price, required: true, step: '0.01', min: '0.01', value: sprintf('%.2f', @food.price || 0.00) %>
       </div>
 
       <div class="food-field">

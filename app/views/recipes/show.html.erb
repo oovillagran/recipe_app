@@ -31,7 +31,7 @@
 
 <hr>
 
-<div>
+<div class="food-page">
   <% if @recipe_food.blank? %>
     <p>No food ingredients available for this recipe.</p>
   <% else %>
@@ -48,8 +48,12 @@
         <% @recipe_food.each do |recipe_food| %>
           <tr>
             <td><%= recipe_food.food.name %></td>
-            <td><%= recipe_food.quantity %> <% recipe_food.food.measurement_unit %></td>
-            <td><%= recipe_food.quantity * recipe_food.food.price %></td>
+            <td><%= recipe_food.quantity %> <%= recipe_food.food.measurement_unit %></td>
+            <td>
+              <%= '$' %>
+              <% value = recipe_food.quantity * recipe_food.food.price %>
+              <%= number_with_precision(value, precision:2) %>
+            </td>
             <td>
               <%= link_to "Remove", user_recipe_recipe_food_path(user_id: @recipe.user.id, recipe_id: @recipe.id, id: recipe_food.id), data: { turbo_method: :delete }, class: "action-btn" %>
             </td>
