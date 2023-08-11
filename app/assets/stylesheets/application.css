@@ -185,7 +185,7 @@ th {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1.5rem;
 }
 
 .public_recipes_page {
@@ -269,4 +269,20 @@ tr .shopping-table-width {
 .alert {
   color: #f60202;
   margin-left: 1%;
+}
+
+.recipes-section {
+  width: 90%;
+}
+
+.recipe-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.recipe-info-public {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
