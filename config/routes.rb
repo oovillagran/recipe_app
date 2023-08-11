@@ -11,8 +11,8 @@ Rails.application.routes.draw do
       patch 'toggle'
       end
       resources :recipe_foods, only: [:show, :new, :create, :destroy]
-      get 'shopping_list', to: 'recipes#shopping_list', as: 'shopping_list' do
     end
+    get 'shopping_list', to: 'users#shopping_list', as: 'shopping_list' do
   end
 end
 

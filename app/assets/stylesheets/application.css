@@ -185,7 +185,7 @@ th {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1.5rem;
 }
 
 .public_recipes_page {
@@ -225,6 +225,29 @@ th {
   padding: 0.5rem;
 }
 
+.shopping-list-summary {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  gap: 5rem;
+  padding: 2rem 0;
+}
+
+.shopping-data {
+  align-items: center;
+}
+
+tr .shopping-table-width {
+  width: 15%;
+}
+
+.shopping_list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .flex {
   display: flex;
 }
@@ -247,4 +270,20 @@ th {
 .alert {
   color: #f60202;
   margin-left: 1%;
+}
+
+.recipes-section {
+  width: 90%;
+}
+
+.recipe-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.recipe-info-public {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
