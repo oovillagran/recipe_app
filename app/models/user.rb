@@ -10,10 +10,10 @@ class User < ApplicationRecord
 
   def shopping_list
     # Get all recipe foods for current user's recipes
-    recipe_foods = RecipeFood.where(recipes: { user_id: id })
+    recipe_foods = RecipeFood.joins(:recipe).where(recipes: { user_id: id })
 
     # Group recipe foods by their associated food items and calculate the total quantity required for each food item
-    recipe_foods.group(:food_id).sum(:quantity)
+    required_foods = recipe_foods.group(:food_id).sum(:quantity)
 
     # Hash to store shopping list items
     shopping_list = {}

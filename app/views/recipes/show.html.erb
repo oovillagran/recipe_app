@@ -24,7 +24,7 @@
 
 <div class="recipe-btn">
   <% if current_user == @recipe.user %>
-    <%= button_to "Generate Shopping List", user_recipe_shopping_list_path(user_id: @recipe.user.id, recipe_id: @recipe.id), method: :get, class: "btn" %>
+    <%= button_to "Generate Shopping List", user_shopping_list_path(user_id: @recipe.user.id, recipe_id: @recipe.id), method: :get, class: "btn" %>
     <%= button_to "Add Ingredient", new_user_recipe_recipe_food_path(user_id: @recipe.user.id, recipe_id: @recipe.id), method: :get, class: "btn" %>
   <% end %>
 </div>

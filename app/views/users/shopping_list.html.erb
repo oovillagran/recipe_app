@@ -1,0 +1,33 @@
+<div class="shopping_list_page">
+  <h1>Shopping List</h1>
+  <div class="shopping_list">
+    <% if @shopping_list[:shopping_list].blank? %>
+      <div class="shopping-list-summary">
+        <p>Amount of ingredients to buy: <%= @shopping_list[:total_items] %></p>
+        <p>Total value of food needed: <%= @shopping_list[:total_value] %></p>
+      </div>
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>Food</th>
+              <th>Quantity</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @shopping_list.each do |food, info| %>
+              <tr>
+                <td><%= food.name %></td>
+                <td><%= info[:quantity] %> <%= food.measurement_unit %></td>
+                <td><%= '$' %> <%= number_with_precision(info[:total_price], precision:2) %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    <% else %>
+      <p>No ingredients to buy.</p>
+    <% end %>
+  </div>
+</div>
