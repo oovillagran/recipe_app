@@ -25,7 +25,9 @@
     <%= f.label :public %><br>
     <%= f.select :public, options_for_select(['true', 'false']) %>
   </div>
-  <%= f.submit "Add" %>
+
+   <div class="recipe-field">
+  <%= f.submit "Add Recipe", class: "btn"%>
 <% end %>
   </div>
 </div>
