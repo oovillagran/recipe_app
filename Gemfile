@@ -79,3 +79,6 @@ gem 'devise', '~> 4.9'
 
 # Letter Opener
 gem 'letter_opener'
+
+# CanCanCan
+gem 'cancancan'
