@@ -17,6 +17,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
 }
 
 body {
@@ -25,6 +26,10 @@ body {
   line-height: 1.5;
   color: #333;
   background-color: #fff;
+}
+
+hr {
+  margin: 0 0 2rem;
 }
 
 .new-food {
@@ -109,4 +114,103 @@ th {
   padding: 1rem;
   background-color: #857f7f;
   color: #fff;
+}
+
+.registration-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 0;
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  outline: black 0.125rem solid;
+  width: 50%;
+  background-color: #ece9e9;
+}
+
+.new_user {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+  gap: 1rem;
+}
+
+.field input {
+  padding: 0.25rem;
+  border: #000 0.125rem solid;
+  width: 100%;
+}
+
+.actions .btn {
+  width: 7rem;
+}
+
+.registration-add {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 10% 0;
+}
+
+.registration-add a {
+  text-decoration-line: underline;
+  color: rgb(0, 0, 255);
+}
+
+.recipe-btn {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2rem 0;
+}
+
+.flash-success {
+  color: green;
+}
+
+.flash-alert {
+  color: red;
+}
+
+.public-selector {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.public_recipes_page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ece9e9;
+}
+
+.public_recipes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+  padding: 2rem 0 8rem;
+}
+
+.recipe-card {
+  outline: #000 0.125rem solid;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+}
+
+.left-recipe-col {
+  width: 40%;
+  padding: 0.5rem;
+}
+
+.right-recipe-col {
+  flex-direction: column;
+  padding: 0.5rem;
 }

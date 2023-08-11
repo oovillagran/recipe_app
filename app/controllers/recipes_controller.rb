@@ -34,10 +34,10 @@ class RecipesController < ApplicationController
     redirect_to user_recipes_path
   end
 
-  def toggle_public
+  def toggle
     @recipe = Recipe.find(params[:id])
-    @recipe.toggle!(:public)
-    redirect_to user_recipes_path
+    @recipe.update(public: !@recipe.public)
+    redirect_to recipe_path
   end
 
   def recipe_params
