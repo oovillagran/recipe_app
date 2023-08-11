@@ -14,7 +14,7 @@ class User < ApplicationRecord
 
     # Group recipe foods by their associated food items and calculate the total quantity required for each food item
     required_foods = recipe_foods.group(:food_id).sum(:quantity)
-
+    
     # Hash to store shopping list items
     shopping_list = {}
 

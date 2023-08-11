@@ -13,8 +13,7 @@ class UsersController < ApplicationController
 
     @shopping_list = shopping_list_data[:shopping_list]
     @total_price = shopping_list_data[:total_price]
-    @total_items = shopping_list_data[:total_items]
-    @total_quantity = shopping_list_data[:total_quantity]
+    @total_value = shopping_list_data[:total_value]
   end
 
   private

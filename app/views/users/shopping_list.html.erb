@@ -1,26 +1,26 @@
-<div class="shopping_list_page">
+<div class="shopping_list_page food-page">
   <h1>Shopping List</h1>
   <div class="shopping_list">
     <% if @shopping_list[:shopping_list].blank? %>
       <div class="shopping-list-summary">
-        <p>Amount of ingredients to buy: <%= @shopping_list[:total_items] %></p>
-        <p>Total value of food needed: <%= @shopping_list[:total_value] %></p>
+        <p>Amount of ingredients to buy: <%= @shopping_list.keys.size %></p>
+        <p>Total value of food needed: <%= number_to_currency(@total_value) %></p>
       </div>
-      <div>
-        <table>
+      <div class="food-table shopping-data">
+        <table class="shopping-table">
           <thead>
             <tr>
-              <th>Food</th>
-              <th>Quantity</th>
-              <th>Price</th>
+              <th class="shopping-table-width">Food</th>
+              <th class="shopping-table-width">Quantity</th>
+              <th class="shopping-table-width">Price</th>
             </tr>
           </thead>
           <tbody>
             <% @shopping_list.each do |food, info| %>
               <tr>
-                <td><%= food.name %></td>
-                <td><%= info[:quantity] %> <%= food.measurement_unit %></td>
-                <td><%= '$' %> <%= number_with_precision(info[:total_price], precision:2) %></td>
+                <td class="shopping-table-width"><%= food.name %></td>
+                <td class="shopping-table-width"><%= info[:quantity] %> <%= food.measurement_unit %></td>
+                <td class="shopping-table-width"><%= '$' %> <%= number_with_precision(info[:total_price], precision:2) %></td>
               </tr>
             <% end %>
           </tbody>

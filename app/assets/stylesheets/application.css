@@ -214,3 +214,26 @@ th {
   flex-direction: column;
   padding: 0.5rem;
 }
+
+.shopping-list-summary {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  gap: 5rem;
+  padding: 2rem 0;
+}
+
+.shopping-data {
+  align-items: center;
+}
+
+tr .shopping-table-width {
+  width: 15%;
+}
+
+.shopping_list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
