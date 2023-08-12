@@ -76,7 +76,8 @@ hr {
 .food-table {
   outline: #000 0.125rem solid;
   width: 80%;
-  border-radius: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 }
 
 th,
@@ -310,4 +311,12 @@ tr .shopping-table-width {
 li a {
   text-decoration: none;
   color: #fff;
+}
+
+.row-left-style {
+  border-top-left-radius: 1rem;
+}
+
+.row-right-style {
+  border-top-right-radius: 1rem;
 }
