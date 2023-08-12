@@ -82,3 +82,8 @@ gem 'letter_opener'
 
 # CanCanCan
 gem 'cancancan'
+
+# Rspec
+group :development, :test do
+  gem 'rspec-rails'
+end
