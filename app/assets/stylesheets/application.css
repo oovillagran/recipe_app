@@ -164,6 +164,12 @@ th {
   margin: 2rem 10% 0;
 }
 
+li a,
+.logo a {
+  text-decoration: none;
+  color: #fff;
+}
+
 .registration-add a {
   text-decoration-line: underline;
   color: rgb(0, 0, 255);
@@ -305,12 +311,6 @@ tr .shopping-table-width {
   display: flex;
   gap: 1rem;
   align-items: center;
-}
-
-.logo a,
-li a {
-  text-decoration: none;
-  color: #fff;
 }
 
 .row-left-style {
