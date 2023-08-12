@@ -6,7 +6,8 @@ RSpec.describe RecipesController, type: :request do
   before do
     @user = User.create(name: 'test', email: 'test@test.com', password: '123456',
                         password_confirmation: '123456')
-    @recipe = Recipe.create(name: 'Pasta', description: 'Delicious pasta recipe', preparation_time: 30, cooking_time: 20, user: @user)
+    @recipe = Recipe.create(name: 'Pasta', description: 'Delicious pasta recipe', preparation_time: 30,
+                            cooking_time: 20, user: @user)
 
     login_as(@user, scope: :user)
   end
