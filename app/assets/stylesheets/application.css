@@ -76,6 +76,7 @@ hr {
 .food-table {
   outline: #000 0.125rem solid;
   width: 80%;
+  border-radius: 1rem;
 }
 
 th,
@@ -296,4 +297,17 @@ tr .shopping-table-width {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.logo-area,
+.navbar-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.logo a,
+li a {
+  text-decoration: none;
+  color: #fff;
 }
