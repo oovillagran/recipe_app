@@ -87,3 +87,6 @@ gem 'cancancan'
 group :development, :test do
   gem 'rspec-rails'
 end
+
+# Assert_Template(rende_template) specs
+gem 'rails-controller-testing'
