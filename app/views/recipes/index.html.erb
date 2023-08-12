@@ -9,9 +9,9 @@
       <div class="flex recipe-card">
         <div class="left-recipe-col">
           <h2><%= link_to recipe.name, recipe_path(recipe) %></h2>
-          <% if can? :destroy, recipe %>
+          
             <%= button_to "Remove", recipe_path(recipe), method: :delete, class: "btn del-btn" %>
-          <% end %>
+          
         </div>
         <div class="right-recipe-col">
           <p><%= recipe.description %></p>
