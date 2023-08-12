@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'recipes/public_recipes.html.erb', type: :view do
+RSpec.describe 'public_recipes/index.html.erb', type: :view do
   describe 'Testing public recipes page' do
     before(:each) do
       @user = User.create(name: 'foo', email: 'foobar@gmail.com', password: '123456')
@@ -19,13 +19,16 @@ RSpec.describe 'recipes/public_recipes.html.erb', type: :view do
       @recipe_food2 = RecipeFood.create(quantity: 2, food_id: @food2.id, recipe_id: @recipe1.id)
 
       assign(:user, @user)
-      assign(:recipes, [@recipe1, @recipe2, @recipe3])
+      assign(:recipes, [@recipe1, @recipe2, @recipe3]) # This should be @public_recipes
       assign(:recipe_foods, [@recipe_food1, @recipe_food2])
+
+      # Assigning @public_recipes here
+      assign(:public_recipes, [@recipe1, @recipe2])
 
       render
     end
 
-    xit "Shows the user name of the public recipe's owner" do
+    it "shows the user name of the public recipe's owner" do
       expect(rendered).to have_content('By: foo')
     end
 
