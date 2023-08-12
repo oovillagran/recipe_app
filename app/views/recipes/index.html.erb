@@ -1,20 +1,22 @@
-<h1 class="recipe-page">Recipe List</h1>
+<div class="recipes_page">
+  <h1 class="recipe-page">Recipe List</h1>
   <div class="add-recipe-btn">
-  <%= button_to "Add Recipe", new_recipe_path, method: :get, class: "btn" %>
+    <%= button_to "Add Recipe", new_recipe_path, method: :get, class: "btn" %>
   </div>
 
-<div class="flex recipes-container">
-<% @recipes.each do |recipe| %>
-  <div class="flex recipe-card">
-    <div class="left-recipe-col">
-      <h2><%= link_to recipe.name, recipe_path(recipe) %></h2>
-      <% if can? :destroy, recipe %>
-        <%= button_to "Remove", recipe_path(recipe), method: :delete, class: "btn del-btn" %>
-      <% end %>
-    </div>
-    <div class="right-recipe-col">
-      <p><%= recipe.description %></p>
-    </div>
+  <div class="flex recipes-container">
+    <% @recipes.each do |recipe| %>
+      <div class="flex recipe-card">
+        <div class="left-recipe-col">
+          <h2><%= link_to recipe.name, recipe_path(recipe) %></h2>
+          <% if can? :destroy, recipe %>
+            <%= button_to "Remove", recipe_path(recipe), method: :delete, class: "btn del-btn" %>
+          <% end %>
+        </div>
+        <div class="right-recipe-col">
+          <p><%= recipe.description %></p>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
 </div>
