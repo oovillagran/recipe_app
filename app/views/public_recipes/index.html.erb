@@ -1,0 +1,17 @@
+<div class="public_recipes_page">
+  <h1>Public Recipes</h1>
+  <div class="public_recipes">
+    <% @public_recipes.each do |recipe| %>
+      <div class="recipe-card">
+        <div class="left-recipe-col">
+          <h3><%= link_to recipe.name, recipe_path(recipe) %></h3>
+          <p>By: <%= recipe.user.name %></p>
+        </div>
+        <div class="right-recipe-col">
+          <p>Total Ingredients: <%= recipe.recipe_foods.map(&:food_id).uniq.count %></p>
+          <p>Total Price: $<%= number_with_precision(recipe.total_price, precision: 2) %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

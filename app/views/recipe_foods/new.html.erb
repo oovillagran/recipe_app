@@ -1,0 +1,32 @@
+<div class="new-food">
+  <h1>Add Ingredient To Recipe</h1>
+  <%= form_with model: @recipe_food, url: user_recipe_recipe_foods_path(user_id: @recipe.user.id, recipe_id: @recipe.id), class: 'add-food-form', local: true do |f| %>
+    <div class="food-field">
+      <%= f.label :name %>
+      <%= f.select :food_id, options_for_select(@foods), { include_blank: 'Choose a food'}, class: 'form-control' %>
+    </div>
+
+    <div class="food-field">
+      <%= f.label :quantity %>
+      <%= f.number_field :quantity, required: true, step: '0.01', placeholder: "Quantity" %>
+    </div>
+
+    <% if @existing_food.include?(@recipe_food.food_id) %>
+      <p class="alert alert-warning">This ingredient is already part of the recipe.</p>
+    <% end %>
+
+    <%= f.hidden_field :recipe_id, value: @recipe.id %>
+
+    <div class="actions">
+      <%= f.submit "Add Ingredient", class: "btn" %>
+    </div>
+  <% end %>
+
+  <div>
+    <% flash.each do |key, message| %>
+      <div class="flash-<%= key %>">
+        <%= message %>
+      </div>
+    <% end %>
+  </div>
+</div>
